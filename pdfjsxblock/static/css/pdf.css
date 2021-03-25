@@ -1,0 +1,11 @@
+#pdf-container{
+  padding: 20px;
+  height: 500px;
+  overflow-y:scroll;
+}
+
+
+#the-canvas {
+  border: 1px solid black;
+  direction: ltr;
+}
