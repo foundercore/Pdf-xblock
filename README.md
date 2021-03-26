@@ -29,4 +29,4 @@ pdfJsXblock
 Go to `Settings -> Advanced Settings` and set `advanced_modules` to `["pdfjsxblock"]`.
 
 ### Use the XBlock in a unit ###
-Select `Advanced -> PDFJS` in your unit.
+Select `Advanced -> PDF_JS` in your unit.

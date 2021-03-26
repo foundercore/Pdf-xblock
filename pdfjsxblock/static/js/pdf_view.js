@@ -22,8 +22,11 @@ function pdfXBlockInitView(runtime, element, pdfurl) {
     $(document).ready(function() {
                 // If absolute URL from the remote server is provided, configure the CORS
                 // header on that server.
-                var url = pdfurl;
-                pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
+                //console.log(pdfurl);
+                var url=pdfurl;
+
+                pdfjsLib.GlobalWorkerOptions.workerSrc = '//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.7.570/pdf.worker.js';
+
                 var pdfDoc = null,
                     pageNum = 1,
                     pageRendering = false,

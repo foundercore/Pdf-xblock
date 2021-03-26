@@ -81,6 +81,7 @@ class pdfJsXblock(XBlock):
         The secondary view of the XBlock, shown to teachers
         when editing the XBlock.
         """
+
         context = {
             'display_name': self.display_name,
             'url': self.url,
