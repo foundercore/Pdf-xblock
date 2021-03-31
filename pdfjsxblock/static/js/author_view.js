@@ -1,23 +1,10 @@
 /* Javascript for pdfXBlock. */
-function pdfXBlockInitView(runtime, element, pdfurl) {
+function pdfXBlockAuthorView(runtime, element, pdfurl) {
     /* Weird behaviour :
      * In the LMS, element is the DOM container.
      * In the CMS, element is the jQuery object associated*
      * So here I make sure element is the jQuery object */
 
-    if(element.innerHTML) element = $(element);
-    document.addEventListener('contextmenu', event => event.preventDefault());
-    $(document).bind("keyup keydown", function (e) {
-        if (e.ctrlKey && e.keyCode == 80) {
-            e.preventDefault();
-        }
-        else if (event.keyCode == 123) {
-            e.preventDefault();
-        }
-        else if(event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-            e.preventDefault();
-        }
-    });
 
     $(document).ready(function() {
                 // If absolute URL from the remote server is provided, configure the CORS

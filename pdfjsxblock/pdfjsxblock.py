@@ -71,8 +71,18 @@ class pdfJsXblock(XBlock):
         return frag
 
     def author_view(self, context=None):
-        html = self.render_template("static/html/author_view.html", context)
+     
+        context = {
+            'display_name': self.display_name,
+            'url': self.url,
+        }
+        html = self.render_template('static/html/pdf_view.html', context)
+
         frag = Fragment(html)
+        frag.add_css(self.load_resource("static/css/pdf.css"))
+        frag.add_javascript(self.load_resource("static/js/pdf.js"))
+        frag.add_javascript(self.load_resource("static/js/author_view.js"))
+        frag.initialize_js('pdfXBlockAuthorView', context.get('url'))
         return frag
 
     def studio_view(self, context=None):
