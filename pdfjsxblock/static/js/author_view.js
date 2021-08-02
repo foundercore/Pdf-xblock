@@ -93,6 +93,37 @@ function pdfXBlockAuthorView(runtime, element, pdfurl) {
                 document.getElementById('next').addEventListener('click', onNextPage);
 
                 /**
+                 * Go to specific Page in pdf
+                 */
+
+                function onGoToPage() {
+                  document.getElementById('hidden_last_page').value = pageNum;
+                  pageNum = parseInt(document.getElementById('go_to_page').value);
+                  if (pageNum && pageNum >= pdfDoc.numPages) {
+                    return;
+                  }
+                  if(pageNum){
+                    queueRenderPage(pageNum);
+                  }
+                }
+                document.getElementById('go_to').addEventListener('click', onGoToPage);
+
+                /**
+                 * Goto Last Page
+                */
+
+                function onGoTOLastPage() {
+                  pageNum = parseInt(document.getElementById('hidden_last_page').value);
+                  if (pageNum && pageNum >= pdfDoc.numPages) {
+                    return;
+                  }
+                  if(pageNum){
+                    queueRenderPage(pageNum);
+                  }
+                }
+                document.getElementById("go_to_last_page").addEventListener('click', onGoTOLastPage)
+
+                /**
                  * Asynchronously downloads PDF.
                  */
                 pdfjsLib.getDocument(pdfurl).promise.then(function(pdfDoc_) {

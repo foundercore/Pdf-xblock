@@ -1,14 +1,18 @@
 
-<div align="center">
+<div>
     <div>
         <button id="prev">Previous</button>
         <button id="next">Next</button>
         &nbsp; &nbsp;
-        <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+        <input type="number" name="go_to_page" id="go_to_page" min="1" style="width: 60px;">
+        <button id="go_to">Go to page</button>
+        &nbsp;
+        <input type="hidden" name="hidden_last_page" id="hidden_last_page">
+        <button id="go_to_last_page">Last Page</button>
+        &nbsp; &nbsp;
+        <span style="float: right;">Page: <span id="page_num"></span> / <span id="page_count"></span></span>
     </div>
     <div id="pdf-container">
         <canvas id="the-canvas"></canvas>
     </div>
 </div>
-
-
