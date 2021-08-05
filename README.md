@@ -30,3 +30,12 @@ Go to `Settings -> Advanced Settings` and set `advanced_modules` to `["pdfjsxblo
 
 ### Use the XBlock in a unit ###
 Select `Advanced -> PDF_JS` in your unit.
+
+### Deploy XBlock Command ###
+git clone https://github.com/foundercore/pdfXBlock.git
+sudo /opt/bitnami/use_edx
+source /opt/bitnami/apps/edx/venvs/edxapp/bin/activate
+pip install /home/bitnami/pdfXBlock/
+sudo /opt/bitnami/ctlscript.sh restart apache
+
+newrelic - monitoring tool
